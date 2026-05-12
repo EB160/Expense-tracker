@@ -38,9 +38,9 @@ function addTransaction(e) {
 function updateExpenses() {
   transactionListEl.innerHTML = "";
 
-  const sortedTrasactions = [...transactions].reverse();
+  const sortedTransactions = [...transactions].reverse();
 
-  sortedTrasactions.forEach((transaction) => {
+  sortedTransactions.forEach((transaction) => {
     const transactionEl = createTransactionElement(transaction);
     transactionListEl.appendChild(transactionEl);
   });
@@ -77,8 +77,8 @@ function updateSummary() {
 
   balanceEl.textContent =
     balance < 0 ? `-$${Math.abs(balance)}` : `$${balance}`;
-  incomeAmountEl.textContent = income;
-  expenseAmountEl.textContent = expense;
+  incomeAmountEl.textContent = `$${income}`;
+  expenseAmountEl.textContent = `$${Math.abs(expense)}`;
 }
 
 function removeItem(id) {
